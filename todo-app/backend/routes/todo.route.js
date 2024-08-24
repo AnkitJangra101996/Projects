@@ -1,9 +1,12 @@
 import { Router } from 'express';
-import { create } from '../controllers/todo.controller.js';
+import { allTodos, create, remove, update } from '../controllers/todo.controller.js';
+import { verifyUser } from '../utils/helpers.js';
 
 const todoRouter = Router();
 
-todoRouter.post('/create', create);
-// router.get('/api/all-todos', getAllTodos);
+todoRouter.post('/create', verifyUser, create);
+todoRouter.get('/all', verifyUser, allTodos);
+todoRouter.put('/update/:id', verifyUser, update);
+todoRouter.delete('/delete/:id', verifyUser, remove);
 
 export default todoRouter;
