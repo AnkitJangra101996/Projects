@@ -1,3 +1,3 @@
-# Projects
+# Projects Lists
 
-- Merge two unrelated folders
+1 -> Todo project with vanilla JS and typescript
